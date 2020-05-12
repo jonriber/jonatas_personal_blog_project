@@ -1,0 +1,37 @@
+.techfont{
+    font-family: 'Roboto';
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.custom-navbar{
+
+}
+.bigbrand{
+    font-size: 2em;
+}
+.nav-username{
+    font: outline;
+    font-style: oblique;
+    font-size: medium;
+    font: bold;
+}
+.centerstage{
+    margin-left: auto;
+    margin-right: auto;
+}
+.postdate{
+    text-align: center;
+}
+.posttitle{
+    font-family: 'Roboto';
+    font-size: 3em;
+    text-align: center;
+}
+.postcontent{
+    font-family: 'Roboto';
+    font-size: 1.5em;
+}
+.btn-comment{
+    position: absolute;
+    right: 0px;
+}

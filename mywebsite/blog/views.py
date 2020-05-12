@@ -15,6 +15,7 @@ from django.views.generic import (
 )
 
 #Class Based Views ---> CBV
+
 class AboutView(TemplateView):
     template_name = 'about.html'
 
@@ -89,5 +90,5 @@ def comment_remove(request,pk):
 @login_required
 def post_publish(request,pk):
     post = get_object_or_404(Post,pk=pk)
-    post.publish
+    post.publish()
     return redirect('post_detail',pk=pk)

@@ -1,14 +1,91 @@
 <!DOCTYPE html>
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {% block content%}
+    <title>Jonatas' Personal Blog Project</title>
+    <!--Bootstrap-->
+        <!--CSS StyleSheet-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        
+        <!--Jquery,Popper and JS-->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-    {% endblock %}
+    <!--Medium Style Editor-->
+        <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+    
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+    <!--Fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" ">
+        <a class="navbar-brand bigbrand" href="{% url 'post_list' %}">My Blog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'about' %}">About Me <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/jonriber">My GitHub Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.linkedin.com/in/jonatas-magno-ribeiro/">My LinkedIn Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Django Admin</a>
+              </li>
+            
+          </ul>
+        </div>
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+                <li>
+                    <a href="{% url 'post_new' %}"> New Post</a>
+                </li>
+                <li>
+                    <a href="{% url 'post_draft_list' %}"> Drafts</a>
+                </li>
+                <li>
+                    <a href="{% url 'logout' %}"> Logout</a>
+                </li>
+                <li>
+                    <a class="nav-username"> {{ user.username }}</a>
+                </li>
+    
+                {% else %}
+                <li><a class="nav navbar-right " href="{% url 'login' %}"> Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        
+      </nav>
+
+    <!--This is my content-->
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                {% block content%}
+
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+    
     
 </body>
 </html>
