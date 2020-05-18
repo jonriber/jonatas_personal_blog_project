@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonatas' Personal Blog Project</title>
+    <title>Jonatas' Personal Blog </title>
     <!--Bootstrap-->
         <!--CSS StyleSheet-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -27,6 +27,9 @@
 
 </head>
 
+<!-- Body Block -->
+
+
 <body>
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" ">
@@ -45,26 +48,27 @@
             <li class="nav-item">
               <a class="nav-link" href="https://www.linkedin.com/in/jonatas-magno-ribeiro/">My LinkedIn Profile</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Django Admin</a>
-              </li>
+            
             
           </ul>
         </div>
         <div>
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
-                <li>
-                    <a href="{% url 'post_new' %}"> New Post</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Django Admin</a>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'post_new' %}"> New Post</a>
                 </li>
-                <li>
-                    <a href="{% url 'post_draft_list' %}"> Drafts</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'post_draft_list' %}"> Drafts</a>
                 </li>
-                <li>
-                    <a href="{% url 'logout' %}"> Logout</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}"> Logout</a>
                 </li>
-                <li>
-                    <a class="nav-username"> {{ user.username }}</a>
+                <li class="nav-item active">
+                    <a class="nav-username "> {{ user.username }} <span class="sr-only">(current)</span></a>
                 </li>
     
                 {% else %}

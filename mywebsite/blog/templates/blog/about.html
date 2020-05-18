@@ -1,6 +1,83 @@
 {% extends 'blog/base.html' %}
+{% load static%}
 
 {% block content %}
-<h1>About me</h1>
-<p>Thanks</p>
+<div class="container jumbotron">
+    <h1 class="jumbotron"><strong>About me</strong></h1>
+    <br>
+    <div >
+        <img src="{% static 'images/profile_picture_geek.jpeg' %}" alt="File Not Found">
+        <p><strong>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate at saepe perferendis odio obcaecati laudantium optio dolor, aspernatur vero veniam nam autem vel blanditiis, tempora mollitia! Debitis rem a nisi.</strong></p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos eveniet, quas autem, modi magnam delectus minima in quam reprehenderit natus quae rem ipsam nobis error sed alias optio impedit facilis!</p>
+
+        <ol>
+           <li>bla</li>
+           <li>blabla</li>
+           <li>blablabla</li>
+       </ol>
+       <ul>
+           <li>first</li>
+           <li>second</li>
+           <li>third</li>
+       </ul>
+        <p>Thanks</p>
+<!-- Table -->
+        <table border="1">
+            <thead>
+                <th>Table Head1</th>
+                <th>Table Head2</th>
+                <th>Table Head3</th>
+            </thead>
+            <tr>
+                <td>250</td>
+                <td>red</td>
+                <td>usa</td>
+            </tr>
+            <tr>
+                <td>323</td>
+                <td>africa</td>
+                <td>black</td>
+            </tr>
+        </table>
+<br>
+<!-- forms -->
+        <form action="" method="POST">
+            <div><input type="text"></div>
+
+            <input type="email" placeholder="Type your email " required>
+            <br>
+            <div >
+                <!-- radio input -->
+                <p>this is just a simple test for learning purposes on radio buttons and inputs</p>
+                <label for="test">Test</label>
+                <input id='test' type="radio" name="tst" value="test1">
+
+                <label for="test2">test2</label>
+                <input id="test2" type="radio" name="tst" value="test2">
+            </div>
+            <br>
+
+            <!-- password input -->
+            <div class=""><input type="password"></div>
+
+            <!-- submit input -->
+            <input type="submit" value="Enviar">
+            <br>
+            
+            <!-- select input -->
+            <p>this is a select input test</p>
+            <select name="test" id="">
+                <option value="Great">5</option>
+                <option value="Average">3</option>
+                <option value="Could be better">2</option>
+                <option value="Horrible">1</option>
+                <option value="bad">0</option>
+            </select>
+
+        </form>
+    </div>
+</div>
+
+
+
 {% endblock %}
