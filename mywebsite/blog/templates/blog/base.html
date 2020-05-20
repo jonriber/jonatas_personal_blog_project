@@ -32,7 +32,7 @@
 
 <body>
     <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" ">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand bigbrand" href="{% url 'post_list' %}">My Blog</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -42,10 +42,10 @@
             <li class="nav-item active">
               <a class="nav-link" href="{% url 'about' %}">About Me <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="https://github.com/jonriber">My GitHub Profile</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="https://www.linkedin.com/in/jonatas-magno-ribeiro/">My LinkedIn Profile</a>
             </li>
             
@@ -55,16 +55,16 @@
         <div>
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Django Admin</a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/admin">Django Admin</a>
                   </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="{% url 'post_new' %}"> New Post</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="{% url 'post_draft_list' %}"> Drafts</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="{% url 'logout' %}"> Logout</a>
                 </li>
                 <li class="nav-item active">
@@ -80,7 +80,7 @@
       </nav>
 
     <!--This is my content-->
-    <div class="content container">
+    <div class="container">
         <div class="row">
             <div class="col-md-8">
                 {% block content%}
