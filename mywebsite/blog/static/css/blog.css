@@ -1,18 +1,14 @@
 body{
-    font-size: 16px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: bold;
-    background-color: rgb(252, 253, 253)
-}
-.techfont{
-    font-family: 'Roboto';
-    font-size: 1.5em;
-    margin-bottom: 10px;
+    padding-top: 70px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .bigbrand{
-    font-size: 1.3em;
-    font-style: italic;
+    font-size: 1.6em;
+    font-style: bold;
     
+}
+.navbar a:hover{
+    background-color: rgb(66, 71, 78);
 }
 .nav-username{
     font: outline;
@@ -27,24 +23,15 @@ body{
 .postdate{
     text-align: center;
 }
-.posttitle{
-    font-family: 'Roboto';
-    font-size: 3em;
-    text-align: center;
-}
-.postcontent{
-    font-family: 'Roboto';
-    font-size: 1.5em;
-}
+
 .btn-comment{
     position: absolute;
     right: 0px;
 }
 .post{
-    border-style: groove;
-    border-width: medium;
-    width: 1000px;
-    height: auto;
-    align-self: center;
+    text-align: center;
+    font-family: 'Roboto';
+    font-size: 20px;
+    
 }
 

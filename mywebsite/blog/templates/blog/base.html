@@ -21,19 +21,24 @@
     
     <!--Custom CSS-->
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
 
     <!--Fonts-->
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
+    <!-- icons library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <!-- Body Block -->
 
 
 <body>
+
     <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand bigbrand" href="{% url 'post_list' %}">My Blog</a>
+    <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand bigbrand" href="{% url 'post_list' %}"><i class="fa fa-fw fa-home"></i> Home</a>
+        <!-- <a class="active" href="{% url 'post_list' %}"><i class="fa fa-fw fa-home"></i> Home</a> -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -48,37 +53,34 @@
             <li class="nav-item active">
               <a class="nav-link" href="https://www.linkedin.com/in/jonatas-magno-ribeiro/">My LinkedIn Profile</a>
             </li>
-            
-            
           </ul>
         </div>
-        <div>
+        <!-- lado direito da navbar -->
+        <div >
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
-                <li class="nav-item active">
-                    <a class="nav-link" href="/admin">Django Admin</a>
-                  </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'post_new' %}"> New Post</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'post_draft_list' %}"> Drafts</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'logout' %}"> Logout</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-username "> {{ user.username }} <span class="sr-only">(current)</span></a>
-                </li>
-    
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle active " href="#" id="nav_drop" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-fw fa-user"></i> {{ user.username }} </a>
+                <!-- dropdown menu -->
+                <div class="dropdown-menu dropdown-menu-right active bg-dark" aria-labelledby="nav_drop">
+                  <a class="dropdown-item active bg-dark" href="/admin">Django Admin</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item active bg-dark" href="{% url 'post_new' %}"> New Post</a>
+                  <a class="dropdown-item active bg-dark" href="{% url 'post_draft_list' %}"> Drafts</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item active bg-dark" href="{% url 'logout' %}"> Logout</a>
+                </div>
+              </li>
+              
                 {% else %}
-                <li><a class="nav navbar-right " href="{% url 'login' %}"> Login</a></li>
+                <li><a class="nav navbar-right nav-link active" href="{% url 'login' %}">
+                  <i class="fa fa-fw fa-user"></i> Login</a></li>
                 {% endif %}
             </ul>
         </div>
-        
+      
       </nav>
-
     <!--This is my content-->
     <div class="container">
         <div class="row">

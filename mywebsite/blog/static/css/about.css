@@ -1,0 +1,35 @@
+.color_table_cell{
+    width: 100px;
+    height: 200px;
+    border: 6px solid #e9ecef;
+    
+    
+
+}
+#cell_1{
+    background-color: #251605ff;
+}
+#cell_2{
+    background-color: #c57b57ff;
+}
+#cell_3{
+    background-color: #f1ab86ff;
+}
+#cell_4{
+    background-color: #f7dba7ff;
+}
+#cell_5{
+    background-color: #9cafb7ff;
+}
+
+#spectrum_title{
+    text-align: center;
+}
+#table_2{
+    margin: auto;
+}
+
+#profile_pic{
+    
+    align-self: center;
+}
