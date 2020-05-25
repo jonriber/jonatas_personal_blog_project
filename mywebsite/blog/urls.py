@@ -1,5 +1,7 @@
 from django.urls import path
+
 from blog import views
+
 
 urlpatterns = [
     path('about/',views.AboutView.as_view(),name='about'),
@@ -14,3 +16,4 @@ urlpatterns = [
     path('comment/<int:pk>/remove/',views.comment_remove,name='comment_remove'),
     path('post/<int:pk>/publish/',views.post_publish,name='post_publish'),
 ]
+

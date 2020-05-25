@@ -12,6 +12,13 @@
     {% endif%}
     
     <p class="postcontent"> {{ post.text|safe|linebreaksbr }}</p>
+    <br>
+    <!--post image -->
+    {% if post.image %}
+    <div class="container">
+            <img src="{{ post.image.url }} " alt="File Missing" width="350px" height="350">
+    </div>
+    {% endif%}
     
     {% if user.is_authenticated %}
     

@@ -2,9 +2,6 @@
     width: 100px;
     height: 200px;
     border: 6px solid #e9ecef;
-    
-    
-
 }
 #cell_1{
     background-color: #251605ff;
@@ -32,4 +29,7 @@
 #profile_pic{
     
     align-self: center;
+}
+img{
+    padding-bottom: 70px;
 }
