@@ -25,7 +25,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'blog/media/uploads')
 SECRET_KEY = 'uh62vpi99m$&jm$fbcf6ap^s_6ynm6-vpva9@b(c=lih)(g8&@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
