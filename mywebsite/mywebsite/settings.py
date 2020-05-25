@@ -28,7 +28,7 @@ SECRET_KEY = 'uh62vpi99m$&jm$fbcf6ap^s_6ynm6-vpva9@b(c=lih)(g8&@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.herokuapp.com']
 
 
 # Application definition
@@ -132,4 +132,5 @@ LOGOUT_REDIRECT_URL = '/'
 # MEDIA
 MEDIA_URL ='/media/'
 
+# heroku
 django_heroku.settings(locals())
