@@ -1,2 +1,2 @@
 web: gunicorn mywebsite.wsgi
-web: gunicorn blog:app
+web: gunicorn jonatas-micro-blog:app
