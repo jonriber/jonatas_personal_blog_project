@@ -132,4 +132,4 @@ LOGOUT_REDIRECT_URL = '/'
 # MEDIA
 MEDIA_URL ='/media/'
 
-django.heroku.settings(locals())
+django_heroku.settings(locals())
