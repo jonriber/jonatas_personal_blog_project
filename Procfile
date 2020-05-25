@@ -1,2 +1,1 @@
-web: gunicorn mywebsite.wsgi
-web: gunicorn jonatas-micro-blog:app
+web: gunicorn mywebsite.wsgi --log-file -
